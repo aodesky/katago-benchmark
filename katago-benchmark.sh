@@ -14,4 +14,7 @@ curl -O https://media.katagotraining.org/uploaded/networks/models/kata1/kata1-b2
 
 ./home/KataGo/cpp/katago benchmark -model kata1-b28c512nbt-s8476434688-d4668249792.bin.gz -config default_gtp.cfg >> /home/benchmark.log
 
+chmod +x /home/analysis-benchmark.sh
+
+./home/analysis-benchmark.sh >> analysis.log
 
