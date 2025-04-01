@@ -4,7 +4,7 @@
 KATAGO_CMD=(
     /home/KataGo/cpp/katago analysis
     -model /home/KataGo/kata1-b28c512nbt-s8476434688-d4668249792.bin.gz
-    -config /home/KataGo/analysis_example.cfg
+    -config /home/KataGo/cpp/configs/analysis_example.cfg
 )
 
 GAME_JSON="/home/katago-benchmark/game.json"
