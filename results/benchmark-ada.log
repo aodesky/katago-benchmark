@@ -1,0 +1,118 @@
+2025-04-01 23:20:17+0000: Running with following config:
+allowResignation = true
+lagBuffer = 1.0
+logAllGTPCommunication = true
+logDir = gtp_logs
+logSearchInfo = true
+logSearchInfoForChosenMove = false
+logToStderr = false
+maxTimePondering = 60.0
+maxVisits = 500
+numSearchThreads = 6
+ponderingEnabled = false
+resignConsecTurns = 3
+resignThreshold = -0.90
+rules = tromp-taylor
+searchFactorAfterOnePass = 0.50
+searchFactorAfterTwoPass = 0.25
+searchFactorWhenWinning = 0.40
+searchFactorWhenWinningThreshold = 0.95
+
+2025-04-01 23:20:17+0000: Loading model and initializing benchmark...
+2025-04-01 23:20:17+0000: Testing with default positions for board size: 19
+2025-04-01 23:20:17+0000: nnRandSeed0 = 16030118319321261758
+2025-04-01 23:20:17+0000: After dedups: nnModelFile0 = kata1-b28c512nbt-s8476434688-d4668249792.bin.gz useFP16 auto useNHWC auto
+2025-04-01 23:20:17+0000: Initializing neural net buffer to be size 19 * 19 exactly
+2025-04-01 23:20:21+0000: TensorRT backend thread 0: Found GPU NVIDIA RTX 6000 Ada Generation memory 50896961536 compute capability major 8 minor 9
+2025-04-01 23:20:21+0000: TensorRT backend thread 0: Initializing (may take a long time)
+2025-04-01 23:20:24+0000: Creating new timing cache
+2025-04-01 23:21:46+0000: Saved new timing cache to /root/.katago/trtcache/trt-100900_gpu-4510dfad_tune-1bf250279187_exact19x19_batch32_fp16
+2025-04-01 23:21:46+0000: TensorRT backend thread 0: Model version 15 useFP16 = true
+2025-04-01 23:21:46+0000: TensorRT backend thread 0: Model name: kata1-b28c512nbt-s8476434688-d4668249792
+
+2025-04-01 23:21:47+0000: Loaded config /home/KataGo/cpp/configs/gtp_example.cfg
+2025-04-01 23:21:47+0000: Loaded model kata1-b28c512nbt-s8476434688-d4668249792.bin.gz
+
+Testing using 800 visits.
+  If you have a good GPU, you might increase this using "-visits N" to get more accurate results.
+  If you have a weak GPU and this is taking forever, you can decrease it instead to finish the benchmark faster.
+
+Your GTP config is currently set to trtUseFP16 = auto
+
+Your GTP config is currently set to use numSearchThreads = 6
+Automatically trying different numbers of threads to home in on the best (board size 19x19): 
+
+2025-04-01 23:21:47+0000: GPU -1 finishing, processed 5 rows 5 batches
+2025-04-01 23:21:47+0000: nnRandSeed0 = 8455573673477656339
+2025-04-01 23:21:47+0000: After dedups: nnModelFile0 = kata1-b28c512nbt-s8476434688-d4668249792.bin.gz useFP16 auto useNHWC auto
+2025-04-01 23:21:47+0000: Initializing neural net buffer to be size 19 * 19 exactly
+2025-04-01 23:21:50+0000: TensorRT backend thread 0: Found GPU NVIDIA RTX 6000 Ada Generation memory 50896961536 compute capability major 8 minor 9
+2025-04-01 23:21:50+0000: TensorRT backend thread 0: Initializing (may take a long time)
+2025-04-01 23:21:52+0000: Using existing timing cache at /root/.katago/trtcache/trt-100900_gpu-4510dfad_tune-1bf250279187_exact19x19_batch32_fp16
+2025-04-01 23:21:59+0000: TensorRT backend thread 0: Model version 15 useFP16 = true
+2025-04-01 23:21:59+0000: TensorRT backend thread 0: Model name: kata1-b28c512nbt-s8476434688-d4668249792
+
+
+Possible numbers of threads to test: 1, 2, 3, 4, 5, 6, 8, 10, 12, 16, 20, 24, 32, 
+
+numSearchThreads =  5: 10 / 10 positions, visits/s = 789.68 nnEvals/s = 649.13 nnBatches/s = 260.87 avgBatchSize = 2.49 (10.2 secs)
+numSearchThreads = 12: 10 / 10 positions, visits/s = 1641.40 nnEvals/s = 1372.29 nnBatches/s = 232.06 avgBatchSize = 5.91 (4.9 secs)
+numSearchThreads = 10: 10 / 10 positions, visits/s = 1470.72 nnEvals/s = 1199.43 nnBatches/s = 243.45 avgBatchSize = 4.93 (5.5 secs)
+numSearchThreads = 20: 10 / 10 positions, visits/s = 1976.51 nnEvals/s = 1674.08 nnBatches/s = 172.12 avgBatchSize = 9.73 (4.1 secs)
+numSearchThreads = 16: 10 / 10 positions, visits/s = 1705.21 nnEvals/s = 1428.41 nnBatches/s = 181.88 avgBatchSize = 7.85 (4.8 secs)
+numSearchThreads = 24: 10 / 10 positions, visits/s = 2055.57 nnEvals/s = 1750.08 nnBatches/s = 150.24 avgBatchSize = 11.65 (4.0 secs)
+numSearchThreads = 32: 10 / 10 positions, visits/s = 1990.32 nnEvals/s = 1781.59 nnBatches/s = 116.62 avgBatchSize = 15.28 (4.2 secs)
+
+
+Optimal number of threads is fairly high, increasing the search limit and trying again.
+
+2025-04-01 23:22:38+0000: GPU -1 finishing, processed 48123 rows 7810 batches
+2025-04-01 23:22:38+0000: nnRandSeed0 = 1153350447303256554
+2025-04-01 23:22:38+0000: After dedups: nnModelFile0 = kata1-b28c512nbt-s8476434688-d4668249792.bin.gz useFP16 auto useNHWC auto
+2025-04-01 23:22:38+0000: Initializing neural net buffer to be size 19 * 19 exactly
+2025-04-01 23:22:42+0000: TensorRT backend thread 0: Found GPU NVIDIA RTX 6000 Ada Generation memory 50896961536 compute capability major 8 minor 9
+2025-04-01 23:22:42+0000: TensorRT backend thread 0: Initializing (may take a long time)
+2025-04-01 23:22:44+0000: Creating new timing cache
+2025-04-01 23:23:55+0000: Saved new timing cache to /root/.katago/trtcache/trt-100900_gpu-4510dfad_tune-1bf250279187_exact19x19_batch96_fp16
+2025-04-01 23:23:56+0000: TensorRT backend thread 0: Model version 15 useFP16 = true
+2025-04-01 23:23:56+0000: TensorRT backend thread 0: Model name: kata1-b28c512nbt-s8476434688-d4668249792
+
+
+Possible numbers of threads to test: 16, 20, 24, 32, 40, 48, 64, 80, 96, 
+
+numSearchThreads = 64: 10 / 10 positions, visits/s = 1843.89 nnEvals/s = 1750.83 nnBatches/s = 59.74 avgBatchSize = 29.31 (4.7 secs)
+numSearchThreads = 40: 10 / 10 positions, visits/s = 1906.29 nnEvals/s = 1733.82 nnBatches/s = 91.39 avgBatchSize = 18.97 (4.4 secs)
+
+
+Ordered summary of results: 
+
+numSearchThreads =  5: 10 / 10 positions, visits/s = 789.68 nnEvals/s = 649.13 nnBatches/s = 260.87 avgBatchSize = 2.49 (10.2 secs) (EloDiff baseline)
+numSearchThreads = 10: 10 / 10 positions, visits/s = 1470.72 nnEvals/s = 1199.43 nnBatches/s = 243.45 avgBatchSize = 4.93 (5.5 secs) (EloDiff +221)
+numSearchThreads = 12: 10 / 10 positions, visits/s = 1641.40 nnEvals/s = 1372.29 nnBatches/s = 232.06 avgBatchSize = 5.91 (4.9 secs) (EloDiff +258)
+numSearchThreads = 16: 10 / 10 positions, visits/s = 1705.21 nnEvals/s = 1428.41 nnBatches/s = 181.88 avgBatchSize = 7.85 (4.8 secs) (EloDiff +267)
+numSearchThreads = 20: 10 / 10 positions, visits/s = 1976.51 nnEvals/s = 1674.08 nnBatches/s = 172.12 avgBatchSize = 9.73 (4.1 secs) (EloDiff +317)
+numSearchThreads = 24: 10 / 10 positions, visits/s = 2055.57 nnEvals/s = 1750.08 nnBatches/s = 150.24 avgBatchSize = 11.65 (4.0 secs) (EloDiff +326)
+numSearchThreads = 32: 10 / 10 positions, visits/s = 1990.32 nnEvals/s = 1781.59 nnBatches/s = 116.62 avgBatchSize = 15.28 (4.2 secs) (EloDiff +303)
+numSearchThreads = 40: 10 / 10 positions, visits/s = 1906.29 nnEvals/s = 1733.82 nnBatches/s = 91.39 avgBatchSize = 18.97 (4.4 secs) (EloDiff +274)
+numSearchThreads = 64: 10 / 10 positions, visits/s = 1843.89 nnEvals/s = 1750.83 nnBatches/s = 59.74 avgBatchSize = 29.31 (4.7 secs) (EloDiff +226)
+
+
+Based on some test data, each speed doubling gains perhaps ~250 Elo by searching deeper.
+Based on some test data, each thread costs perhaps 7 Elo if using 800 visits, and 2 Elo if using 5000 visits (by making MCTS worse).
+So APPROXIMATELY based on this benchmark, if you intend to do a 5 second search: 
+numSearchThreads =  5: (baseline)
+numSearchThreads = 10:  +221 Elo
+numSearchThreads = 12:  +258 Elo
+numSearchThreads = 16:  +267 Elo
+numSearchThreads = 20:  +317 Elo
+numSearchThreads = 24:  +326 Elo (recommended)
+numSearchThreads = 32:  +303 Elo
+numSearchThreads = 40:  +274 Elo
+numSearchThreads = 64:  +226 Elo
+
+If you care about performance, you may want to edit numSearchThreads in /home/KataGo/cpp/configs/gtp_example.cfg based on the above results!
+If you intend to do much longer searches, configure the seconds per game move you expect with the '-time' flag and benchmark again.
+If you intend to do short or fixed-visit searches, use lower numSearchThreads for better strength, high threads will weaken strength.
+If interested see also other notes about performance and mem usage in the top of /home/KataGo/cpp/configs/gtp_example.cfg
+
+2025-04-01 23:24:06+0000: GPU -1 finishing, processed 15722 rows 682 batches
