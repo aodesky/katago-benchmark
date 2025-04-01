@@ -7,7 +7,7 @@ KATAGO_CMD=(
     -config /home/KataGo/analysis_example.cfg
 )
 
-GAME_JSON="/home/game.json"
+GAME_JSON="/home/katago-benchmark/game.json"
 OUTPUT_LINES=294
 
 # Run Katago with JSON piped directly

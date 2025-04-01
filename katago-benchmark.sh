@@ -4,7 +4,7 @@ git clone https://github.com/lightvector/KataGo.git
 cd /home/KataGo/cpp
 
 #sudo apt install cuda-toolkit
-sudo apt-get install tensorrt libzip-dev openssl jq bc coreutils
+sudo apt-get -y install tensorrt libzip-dev openssl jq bc coreutils
 
 cmake . -DUSE_BACKEND=TENSORRT -DBUILD_DISTRIBUTED=
 make -j 4
