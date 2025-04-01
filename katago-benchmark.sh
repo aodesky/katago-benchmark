@@ -12,9 +12,9 @@ cd /home/KataGo
 
 curl -O https://media.katagotraining.org/uploaded/networks/models/kata1/kata1-b28c512nbt-s8476434688-d4668249792.bin.gz
 
-./home/KataGo/cpp/katago benchmark -model kata1-b28c512nbt-s8476434688-d4668249792.bin.gz -config default_gtp.cfg >> /home/benchmark.log
+/home/KataGo/cpp/katago benchmark -model kata1-b28c512nbt-s8476434688-d4668249792.bin.gz -config default_gtp.cfg >> /home/benchmark.log
 
 chmod +x /home/katago-benchmark/analysis-benchmark.sh
 
-./home/katago-benchmark/analysis-benchmark.sh >> analysis.log
+/home/katago-benchmark/analysis-benchmark.sh >> analysis.log
 
