@@ -1,3 +1,5 @@
+#!/bin/bash
+
 cd ~
 
 git clone https://github.com/lightvector/KataGo.git
@@ -13,8 +15,4 @@ cd ~/KataGo
 cp ~/katago-benchmark/2gpus.cfg ~/KataGo/
 
 curl -O https://media.katagotraining.org/uploaded/networks/models/kata1/kata1-b28c512nbt-s8476434688-d4668249792.bin.gz
-
-~/KataGo/cpp/katago benchmark -model kata1-b28c512nbt-s8476434688-d4668249792.bin.gz -config 2gpus.cfg >> ~/benchmark.log
-
-#/home/katago-benchmark/analysis-benchmark.sh >> /home/analysis.log
 
