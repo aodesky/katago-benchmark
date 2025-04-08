@@ -1,20 +1,20 @@
-cd /home/
+cd ~
 
 git clone https://github.com/lightvector/KataGo.git
-cd /home/KataGo/cpp
+cd ~/KataGo/cpp
 
 #sudo apt install cuda-toolkit
 sudo apt-get -y install tensorrt libzip-dev openssl jq bc coreutils cmake
 
 cmake . -DUSE_BACKEND=TENSORRT -DBUILD_DISTRIBUTED=
 make -j 4
-cd /home/KataGo
+cd ~/KataGo
 
-cp /home/katago-benchmark/2gpus.cfg /home/KataGo/
+cp ~/katago-benchmark/2gpus.cfg ~/KataGo/
 
 curl -O https://media.katagotraining.org/uploaded/networks/models/kata1/kata1-b28c512nbt-s8476434688-d4668249792.bin.gz
 
-/home/KataGo/cpp/katago benchmark -model kata1-b28c512nbt-s8476434688-d4668249792.bin.gz -config 2gpus.cfg >> /home/benchmark.log
+~/KataGo/cpp/katago benchmark -model kata1-b28c512nbt-s8476434688-d4668249792.bin.gz -config 2gpus.cfg >> ~/benchmark.log
 
 #/home/katago-benchmark/analysis-benchmark.sh >> /home/analysis.log
 
