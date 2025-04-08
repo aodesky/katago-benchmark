@@ -10,9 +10,11 @@ cmake . -DUSE_BACKEND=TENSORRT -DBUILD_DISTRIBUTED=
 make -j 4
 cd /home/KataGo
 
+cp /home/katago-benchmark/2gpus.cfg /home/KataGo/
+
 curl -O https://media.katagotraining.org/uploaded/networks/models/kata1/kata1-b28c512nbt-s8476434688-d4668249792.bin.gz
 
-/home/KataGo/cpp/katago benchmark -model kata1-b28c512nbt-s8476434688-d4668249792.bin.gz -config /home/KataGo/cpp/configs/gtp_example.cfg >> /home/benchmark.log
+/home/KataGo/cpp/katago benchmark -model kata1-b28c512nbt-s8476434688-d4668249792.bin.gz -config 2gpus.cfg >> /home/benchmark.log
 
-/home/katago-benchmark/analysis-benchmark.sh >> /home/analysis.log
+#/home/katago-benchmark/analysis-benchmark.sh >> /home/analysis.log
 
