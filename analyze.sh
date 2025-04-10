@@ -7,7 +7,7 @@ KATAGO_CMD=(
     -config ~/katago-benchmark/2gpus_singlegame.cfg
 )
 
-GAME_JSON="~/katago-benchmark/game.json"
+GAME_JSON="${HOME}/katago-benchmark/game.json"
 OUTPUT_LINES=294
 
 # Run Katago with JSON piped directly
