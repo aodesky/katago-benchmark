@@ -15,7 +15,7 @@ echo "Running initial benchmark..."
 mkdir ~/katago-benchmark/results
 
 # run initial benchmark
-~/KataGo/cpp/katago benchmark -model ~/kata1-b28c512nbt-s8476434688-d4668249792.bin.gz -config "$CONFIG_FILE" >> ~/katago-benchmark/results/benchmark.log
+~/KataGo/cpp/katago benchmark -model ~/katago-benchmark/kata1-b28c512nbt-s8476434688-d4668249792.bin.gz -config "$CONFIG_FILE" >> ~/katago-benchmark/results/benchmark.log
 
 echo "Done!"
 
