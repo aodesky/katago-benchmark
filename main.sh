@@ -1,5 +1,9 @@
 #!/bin/bash
 
+NUM_GPUS="$1"
+MYHOMEDIR="${HOME}"
+CONFIG_FILE="${MYHOMEDIR}/${NUM_GPUS}gpus.cfg"
+
 echo "Installing Katago..."
 
 ~/katago-benchmark/install-packages.sh
@@ -9,14 +13,19 @@ echo "Done!"
 echo "Running initial benchmark..."
 
 # run initial benchmark
-~/KataGo/cpp/katago benchmark -model ~/kata1-b28c512nbt-s8476434688-d4668249792.bin.gz -config ~/2gpus.cfg >> ~/katago-benchmark/results/benchmark.log
+~/KataGo/cpp/katago benchmark -model ~/kata1-b28c512nbt-s8476434688-d4668249792.bin.gz -config "$CONFIG_FILE" >> ~/katago-benchmark/results/benchmark.log
 
 echo "Done!"
 
 echo "Running game analysis..."
 
 # run game analysis
-~/katago-benchmark/analyze.sh >> ~/katago-benchmark/results/game-analysis.log
+
+# first pass
+~/katago-benchmark/analyze.sh >> ~/katago-benchmark/results/game-analysis1.log
+
+# second pass
+~/katago-benchmark/analyze.sh >> ~/katago-benchmark/results/game-analysis2.log
 
 echo "Done!"
 
