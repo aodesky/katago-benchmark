@@ -1,10 +1,14 @@
 #!/bin/bash
 
+NUM_GPUS="$1"
+MYHOMEDIR="${HOME}"
+CONFIG_FILE="${MYHOMEDIR}/katago-benchmark/${NUM_GPUS}gpus_singlegame.cfg"
+
 # Configuration
 KATAGO_CMD=(
     ~/KataGo/cpp/katago analysis
     -model ~/KataGo/kata1-b28c512nbt-s8476434688-d4668249792.bin.gz
-    -config ~/katago-benchmark/2gpus_singlegame.cfg
+    -config "$CONFIG_FILE"
 )
 
 GAME_JSON="${HOME}/katago-benchmark/game.json"

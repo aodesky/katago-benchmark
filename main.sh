@@ -24,10 +24,10 @@ echo "Running game analysis..."
 # run game analysis
 
 # first pass
-~/katago-benchmark/analyze.sh >> ~/katago-benchmark/results/game-analysis1.log
+~/katago-benchmark/analyze.sh $1 >> ~/katago-benchmark/results/game-analysis1.log
 
 # second pass
-~/katago-benchmark/analyze.sh >> ~/katago-benchmark/results/game-analysis2.log
+~/katago-benchmark/analyze.sh $1 >> ~/katago-benchmark/results/game-analysis2.log
 
 echo "Done!"
 
